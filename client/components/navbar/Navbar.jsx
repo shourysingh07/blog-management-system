@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 export default function Navbar(){
     const router=useRouter();
     const user=useSelector(state=>state?.user?.user);
-    console.log("userXX",user);
     const uname=user?.username?.split(' ');
     const firstName=uname && uname[0];
 
@@ -20,8 +19,7 @@ export default function Navbar(){
                 <div className="xs:hidden md:flex justify-between items-center gap-7">
                     <Link href="/" className="cursor-pointer text-[#183B56] hover:text-[#1576DB]">Home</Link>
                     <Link href="/blogs/all" className="cursor-pointer text-[#183B56] hover:text-[#1576DB]">Article</Link>
-                    {/*<Link href="/blogs/cat" className="cursor-pointer text-[#183B56] hover:text-[#1576DB]">category</Link>*/}
-                    <Link href="/blog/create" className="cursor-pointer text-[#183B56] hover:text-[#1576DB]">New</Link>
+                    {user && <Link href="/blog/create" className="cursor-pointer text-[#183B56] hover:text-[#1576DB]">New</Link>}
                     {!user ? <Link href="/login" className="cursor-pointer text-[#1576DB] hover:bg-[#1576DB] hover:text-white border px-5 py-1 rounded-full  border-[#1576DB] font-bold">Sign In</Link>
                     : <Link href={`/profile/${user?.id}`} className="cursor-pointer text-[#1576DB] hover:text-rose-500 border-[#1576DB] font-bold flex flex-row items-center justify-center capitalize">
                         <RxAvatar />&nbsp;{firstName}

@@ -1,9 +1,17 @@
 "use client"
-import { useRouter } from "next/router"
 import NewBlog from "@/components/newBlog/NewBlog"
 import RuleBook from "@/components/rules/RuleBook"
+import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
 
 export default function CreateBlog() {
+  const user=useSelector(state=>state?.user?.user);
+  const router=useRouter();
+
+  if(!user){
+    router.push("/login");
+  }
+
   return (
     <div className="w-full m-0 p-0 flex justify-center items-center bg-[#FDFDFD]">
       <div className="w-full max-w-[1060px] m-0 p-3 grid md:grid-cols-10 justify-between gap-8 sm:px-6 xs:px-3">
