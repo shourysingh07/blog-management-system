@@ -1,7 +1,7 @@
 # Blog Management System
 
 ## Description
-Shoury - The Blog Management System is a web application designed to streamline the creation, management, and publication of blog posts. It offers an intuitive interface for administrators and authors to create, edit, and delete blog posts. The system also includes features for user authentication, content management, categories, tags, and comments.
+The Blog Management System is a web application designed to streamline the creation, management, and publication of blog posts. It offers an intuitive interface for administrators and authors to create, edit, and delete blog posts. The system also includes features for user authentication, content management, categories, tags, and comments.
 
 ## Tools & Technologies Used
 - **Front-end:** HTML, CSS, JavaScript
